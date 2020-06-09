@@ -1,6 +1,6 @@
-package unitConversion;
+package main;
 
-import static unitConversion.UnitConverter.conversion;
+import static main.UnitConverter.conversion;
 
 public class main {
     public static void main(String[] args) {

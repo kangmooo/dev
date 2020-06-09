@@ -1,6 +1,6 @@
-package unitConversion;
+package main;
 
-import static unitConversion.Units.*;
+import static main.Units.*;
 
 /**
  * Units 의 단위 비윺및 계산식을 이용 하여 단위 환산 해주는 converter
@@ -25,7 +25,7 @@ public class UnitConverter {
         } catch (Exception e) {
             result = value;
         }
-        System.out.println(fromUnit + " -> " + toUnit + " | " + value + " -> " + result);
+        System.out.println(value + " "+fromUnit+ " -> " + result+ " "+toUnit);
         return result;
     }
 
