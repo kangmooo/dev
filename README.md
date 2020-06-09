@@ -4,3 +4,8 @@
 3. 계산식 수행
 4. batch multi flows
 5. batch multi jobs
+
+6. indexedDB 
+7. node.js
+8. Amazon(EC2)
+
