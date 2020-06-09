@@ -1,0 +1,76 @@
+package unitConversion;
+
+import static unitConversion.UnitConverter.conversion;
+
+public class main {
+    public static void main(String[] args) {
+        conversion(10.0, "D", "g/mL", "kg/m3");
+        conversion(10.0, "D", "g/cm3", "kg/m3");
+        conversion(10.0, "D", "lb/ft3", "kg/m3");
+        conversion(10.0, "D", "kg/m3", "lb/ft3");
+        conversion(10.0, "D", "kg/m3", "g/mL");
+        conversion(10.0, "D", "kg/m3", "g/cm3");
+        conversion(10.0, "E", "W", "MW");
+        conversion(10.0, "E", "kW", "MW");
+        conversion(10.0, "E", "MW", "kW");
+        conversion(10.0, "E", "MW", "W");
+        conversion(10.0, "EC", "mA", "A");
+        conversion(10.0, "EC", "A", "mA");
+        conversion(10.0, "H", "BTU/lb", "kJ/kg");
+        conversion(10.0, "H", "MJ/kg", "kJ/kg");
+        conversion(10.0, "H", "kcal/kg", "kJ/kg");
+        conversion(10.0, "H", "kJ/kg", "MJ/kg");
+        conversion(10.0, "H", "kJ/kg", "BTU/lb");
+        conversion(10.0, "H", "kJ/kg", "kcal/kg");
+        conversion(10.0, "M", "t/h", "kg/s");
+        conversion(10.0, "M", "kg/s", "t/h");
+        conversion(10.0, "P", "bar", "Mpa");
+        conversion(10.0, "P", "Pa", "Mpa");
+        conversion(10.0, "P", "psi", "Mpa");
+        conversion(10.0, "P", "kgf/cm2", "Mpa");
+        conversion(10.0, "P", "mmHg", "Mpa");
+        conversion(10.0, "P", "inHg", "Mpa");
+        conversion(10.0, "P", "mmH2O", "Mpa");
+        conversion(10.0, "P", "inH2O", "Mpa");
+        conversion(10.0, "P", "mbar", "Mpa");
+        conversion(10.0, "P", "kPa", "Mpa");
+        conversion(10.0, "P", "Mpa", "bar");
+        conversion(10.0, "P", "Mpa", "psi");
+        conversion(10.0, "P", "Mpa", "kgf/cm2");
+        conversion(10.0, "P", "Mpa", "mmHg");
+        conversion(10.0, "P", "Mpa", "inHg");
+        conversion(10.0, "P", "Mpa", "mmH2O");
+        conversion(10.0, "P", "Mpa", "inH2O");
+        conversion(10.0, "P", "Mpa", "mbar");
+        conversion(10.0, "P", "Mpa", "kPa");
+        conversion(10.0, "P", "Mpa", "Pa");
+        conversion(10.0, "S", "BTU/lb°F", "kJ/kgK");
+        conversion(10.0, "S", "kcal/kgK", "kJ/kgK");
+        conversion(10.0, "S", "kJ/kgK", "kcal/kgK");
+        conversion(10.0, "S", "kJ/kgK", "BTU/lb°F");
+        conversion(10.0, "T", "K", "°C");
+        conversion(10.0, "T", "°R", "°C");
+        conversion(10.0, "T", "°F", "°C");
+        conversion(10.0, "T", "°C", "K");
+        conversion(10.0, "T", "°C", "°R");
+        conversion(10.0, "T", "°C", "°F");
+        conversion(10.0, "U", "MJ/kg", "kJ/kg");
+        conversion(10.0, "U", "BTU/lb", "kJ/kg");
+        conversion(10.0, "U", "kcal/kg", "kJ/kg");
+        conversion(10.0, "U", "kJ/kg", "kcal/kg");
+        conversion(10.0, "U", "kJ/kg", "MJ/kg");
+        conversion(10.0, "U", "kJ/kg", "BTU/lb");
+        conversion(10.0, "V", "mL/g", "m3/kg");
+        conversion(10.0, "V", "cm3/g", "m3/kg");
+        conversion(10.0, "V", "ft3/lb", "m3/kg");
+        conversion(10.0, "V", "m3/kg", "cm3/g");
+        conversion(10.0, "V", "m3/kg", "mL/g");
+        conversion(10.0, "V", "m3/kg", "ft3/lb");
+        conversion(10.0, "VFR", "Nm3/sec", "m3/hr");
+        conversion(10.0, "VFR", "m3/s", "m3/hr");
+        conversion(10.0, "VFR", "m3/hr", "Nm3/sec");
+        conversion(10.0, "VFR", "m3/hr", "m3/s");
+        conversion(10.0, "W", "ft/s", "m/s");
+        conversion(10.0, "W", "m/s", "ft/s");
+    }
+}
