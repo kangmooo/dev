@@ -22,7 +22,7 @@ import static main.ReservedWords.*;
  *
  * @author SungTae, Kang
  */
-public class ValidationCheckFunctions {
+public class ValidCheckFuncs {
 
     // string buffer에 값이 있으면 토큰으로 추가하고, string buffer를 비운다.
     public static BiFunction<String, List<Object>, String> emptyStringBuffer = (stringBuffer, tokenList) -> {

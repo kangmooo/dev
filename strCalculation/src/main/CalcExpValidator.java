@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
-import static main.ValidationCheckFunctions.*;
+import static main.ValidCheckFuncs.*;
 
 public class CalcExpValidator {
 
