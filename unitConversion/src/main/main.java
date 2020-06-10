@@ -64,7 +64,7 @@ public class main {
         conversion(10.0, "V", "cm3/g", "m3/kg");
         conversion(10.0, "V", "ft3/lb", "m3/kg");
         conversion(10.0, "V", "m3/kg", "cm3/g");
-        conversion(10.0, "V", "m3/kg", "mL/g");
+        conversion(10.0, "V", "m3/kg,n", "mL/g");
         conversion(10.0, "V", "m3/kg", "ft3/lb");
         conversion(10.0, "VFR", "Nm3/sec", "m3/hr");
         conversion(10.0, "VFR", "m3/s", "m3/hr");
