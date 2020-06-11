@@ -1,6 +1,4 @@
-package main;
-
-import lombok.extern.slf4j.Slf4j;
+package main.calcExpValidation;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,13 +6,14 @@ import java.util.List;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
+import static java.lang.Boolean.FALSE;
+
 /**
  * Character Classification 문자 분류
  * (* 계산식의 string의 유형 구분 하는 용도로 쓰임)
  *
  * @author SungTae, Kang
  */
-@Slf4j
 public final class ReservedWords {
 
     static List<String> operations = Arrays.asList("+", "-", "*", "/", "^");
@@ -62,7 +61,6 @@ public final class ReservedWords {
         put("IS_EXIST", 1);
         put("PREVIOUS", 2);
     }};
-
     // 사칙연산 및 제곱근 '+' '-' '*' '/' '^'
     public static Predicate<Object> isOperation = str -> operations.contains(str);
     // boolean 값 체크
@@ -84,10 +82,8 @@ public final class ReservedWords {
             return false;
         }
     };
-
     // threshold check 를 하는 함수 인지 확인
     public static Predicate<String> isThresholdCheckFunc = str -> Arrays.asList("AVERAGE", "MEDIAN", "SPREAD", "MAXIMUM", "MINIMUM", "SUM").contains(str);
-
     // 마이너스 체크( true:단항의 음수 | false:이항 연산의 "-" 에 따라 체크)
     // true : 단항의 음수, false 2항의 연산
     public static BiPredicate<String, Integer> isMinus = (str, i) -> {
@@ -102,4 +98,21 @@ public final class ReservedWords {
         }
     };
 
+    public static boolean isFunction(List<Object> list, int start, List<String> msg) {
+        boolean result = FALSE;
+        if (start > 0) {
+            Object obj = list.get(start - 1);
+            if (obj instanceof String
+                    && !isOperation.test(obj)
+                    && !isSquareBracket.test(String.valueOf(obj))
+                    && !isBracket.test(obj)
+                    && !isComma.test(String.valueOf(obj))) {
+                if (!functions.containsKey(obj)) {                                            // 2) ( 앞에 function 인지 확인 한다. 있으면 앞 index 까지 포함 하려고..
+                    msg.add("\"" + obj + "\"" + "is not function ");
+                }
+                result = obj instanceof String;
+            }
+        }
+        return result;
+    }
 }

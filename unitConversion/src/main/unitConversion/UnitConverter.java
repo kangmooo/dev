@@ -1,6 +1,6 @@
-package main;
+package main.unitConversion;
 
-import static main.Units.*;
+import static main.unitConversion.Units.*;
 
 /**
  * Units 의 단위 비윺및 계산식을 이용 하여 단위 환산 해주는 converter

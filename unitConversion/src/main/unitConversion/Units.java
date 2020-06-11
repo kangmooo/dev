@@ -1,4 +1,6 @@
-package main;
+package main.unitConversion;
+
+import main.main;
 
 import java.util.Collections;
 import java.util.HashMap;

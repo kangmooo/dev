@@ -1,18 +1,20 @@
 package main;
 
+import main.calcExpValidation.CalcExpValidationController;
+
 import java.util.HashMap;
 
 public class main {
     public static void main(String[] args) {
 
         HashMap<String, Object> testDataMap = new HashMap<String, Object>() {{
-            put("eddy", 1);
-            put("pororo", 2);
-            put("krong", 3);
-            put("pobi", 4);
+            put("EDDY", 1);
+            put("PORORO", 2);
+            put("POBI", 4);
+            put("KRONG", 3);
         }};
 
-        CalcExpValidator.checkCalcExp.apply("eddy+pororo", testDataMap);
+        System.out.println(CalcExpValidationController.checkCalcExp.apply("eddy+pororo", testDataMap));
     }
 }
 
