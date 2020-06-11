@@ -62,72 +62,21 @@ public class Formulas {
      */
     public static String callFunction(String func, Stack<Object> stack) {
         try {
-
-            switch (func) {
-                case "ABS":
-                case "SQRT":
-                case "SATURATION_PRESSURE":
-                case "SATURATION_TEMPERATURE":
-                case "SPECIFIC_VOLUME_LIQUID":
-                    return checkFuncAgrs.apply(func, stack, 1);
-
-                case "ISENTROPIC_EFFICIENCY_GT_COMPRESSOR":
-                case "COMPRESSOR_TEMPERATURE_RATIO":
-                case "ISENTROPIC_EFFICIENCY_GT_TURBINE":
-                case "AH_LEAKAGE":
-                case "OR_EXIST":
-                case "AND_EXIST":
-                case "PREVIOUS":
-                    return checkFuncAgrs.apply(func, stack, 2);
-
-                case "ENTHALPY":
-                case "AH_GSE_NO_LEAKAGE":
-                case "AH_THERMAL_POWER":
-                case "STEAM_TURBINE_FLOW":
-                case "PUMP_TDH":
-                case "SELECT":
-                    return checkFuncAgrs.apply(func, stack, 3);
-
-                case "AH_X_RATIO_NO_LEAKAGE":
-                case "HEAT_EX_THERMAL_POWER":
-                case "ISENTROPIC_EFFICIENCY_ST_HP":
-                case "ISENTROPIC_EFFICIENCY_ST_LP":
-                case "ISENTROPIC_EFFICIENCY_ST_PUMP":
-                case "IGV_ANTI_ICING_SP":
-                    return checkFuncAgrs.apply(func, stack, 4);
-
-                case "AH_GSE_LEAKAGE":
-                    return checkFuncAgrs.apply(func, stack, 5);
-
-                case "AH_X_RATIO_LEAKAGE":
-                    return checkFuncAgrs.apply(func, stack, 6);
-
-                case "AVERAGE":
-                case "MEDIAN":
-                case "SPREAD":
-                case "MAXIMUM":
-                case "SUM":
-                case "MINIMUM":
-                    return thresholdCheck(func, stack);
-
-                case "PUMP_HYDRAULIC_POWER":
-                    return pump_hydraulic_power(stack);
-
-                case "HEAT_EX_LMTD":
-                    return heat_ex_lmtd(stack);
-
-                case "COMPRESSOR_PRESSURE_RATIO":
-                    return compressor_pressure_ratio(stack);
-
-                case "THERMAL_EFFICIENCY_GT":
-                    return thermal_efficiency_gt.apply(stack);
-
-                case "GT_MWI":
-                    return gt_mwi.apply(stack);
-
-                default:
-                    return "";
-            }
+            return switch (func) {
+                case "ABS", "SQRT", "SATURATION_PRESSURE", "SATURATION_TEMPERATURE", "SPECIFIC_VOLUME_LIQUID" -> checkFuncAgrs.apply(func, stack, 1);
+                case "ISENTROPIC_EFFICIENCY_GT_COMPRESSOR", "COMPRESSOR_TEMPERATURE_RATIO", "ISENTROPIC_EFFICIENCY_GT_TURBINE", "AH_LEAKAGE", "OR_EXIST", "AND_EXIST", "PREVIOUS" -> checkFuncAgrs.apply(func, stack, 2);
+                case "ENTHALPY", "AH_GSE_NO_LEAKAGE", "AH_THERMAL_POWER", "STEAM_TURBINE_FLOW", "PUMP_TDH", "SELECT" -> checkFuncAgrs.apply(func, stack, 3);
+                case "AH_X_RATIO_NO_LEAKAGE", "HEAT_EX_THERMAL_POWER", "ISENTROPIC_EFFICIENCY_ST_HP", "ISENTROPIC_EFFICIENCY_ST_LP", "ISENTROPIC_EFFICIENCY_ST_PUMP", "IGV_ANTI_ICING_SP" -> checkFuncAgrs.apply(func, stack, 4);
+                case "AH_GSE_LEAKAGE" -> checkFuncAgrs.apply(func, stack, 5);
+                case "AH_X_RATIO_LEAKAGE" -> checkFuncAgrs.apply(func, stack, 6);
+                case "AVERAGE", "MEDIAN", "SPREAD", "MAXIMUM", "SUM", "MINIMUM" -> thresholdCheck(func, stack);
+                case "PUMP_HYDRAULIC_POWER" -> pump_hydraulic_power(stack);
+                case "HEAT_EX_LMTD" -> heat_ex_lmtd(stack);
+                case "COMPRESSOR_PRESSURE_RATIO" -> compressor_pressure_ratio(stack);
+                case "THERMAL_EFFICIENCY_GT" -> thermal_efficiency_gt.apply(stack);
+                case "GT_MWI" -> gt_mwi.apply(stack);
+                default -> "";
+            };
         } catch (Exception e) {
             System.out.println("    error function = " + func + " |  error message = " + e.getMessage());
             return "    error function = " + func + " |  error message = " + e.getMessage() + "\n";

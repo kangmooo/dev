@@ -33,8 +33,8 @@ public class CalcExpValidationController {
                 for (int j = end - 1; j >= 0; j--) {
                     int start = j;
                     if ("(".equals(list.get(j))) {                                                  // 2) '(' 를 찾는다.
-                        start = (isFunction(list, start, msg)) ? start - 1 : start;                 // 3) 앞의 obj 가 String 이면 함수라고 생각 하고 함수 명까지 포함 하여 executeCalc를 수행 하게 한다.
-                        list = executeCalc(list, start, end, aliasDataMap, msg);                       // 4) 연산 처리 하면서 오류 msg String | 오류가 있으도 1.0 으로 return 계속 진행 해서 오류 전체를 String 으로 저장
+                        start = (isFunction(list, start, msg)) ? start - 1 : start;                 // 3) 앞의 obj 가 String 이면 함수라고 생각 하고 함수 명까지 포함 하여 executeCalc 를 수행 하게 한다.
+                        list = executeCalc(list, start, end, aliasDataMap, msg);                    // 4) 연산 처리 하면서 오류 msg String | 오류가 있으도 1.0 으로 return 계속 진행 해서 오류 전체를 String 으로 저장
                         break;
                     }
                 }
