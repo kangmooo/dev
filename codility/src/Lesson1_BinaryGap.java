@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-public class Lesson1_Iterations {
+public class Lesson1_BinaryGap {
 
     @Test
     public void test() {
