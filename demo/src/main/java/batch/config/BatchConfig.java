@@ -97,15 +97,19 @@ public class BatchConfig {
             long startTime = System.currentTimeMillis();
             String commitStatus = "";
             T param = jobParam;
-            try (Connection conn = dataSource.getConnection(); PreparedStatement stmt = conn.prepareStatement(queryStr)) {
+            Connection conn = dataSource.getConnection();
+            try (PreparedStatement stmt = conn.prepareStatement(queryStr)) {
+                conn.setAutoCommit(false);
                 list.forEach(item -> processor.accept(stmt, item, jobParam));
                 stmt.executeBatch();
+                conn.commit();
                 commitStatus = "commit";
             } catch (Exception e) {
                 e.printStackTrace();
+                conn.rollback();
                 commitStatus = "rollback";
             } finally {
-                log.info("");
+                log.info(""+commitStatus);
             }
         };
     }
