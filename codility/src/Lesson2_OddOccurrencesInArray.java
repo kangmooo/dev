@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Lesson3_OddOccurrencesInArray {
+public class Lesson2_OddOccurrencesInArray {
 
     @Test
     public void test() {
