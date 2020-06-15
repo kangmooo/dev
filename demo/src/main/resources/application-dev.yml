@@ -1,0 +1,16 @@
+logging:
+  level:
+    com: info
+    org: error
+#  file:
+#    name: D:/_PDS_LOG/prevision_batch_2.log
+server:
+  port: 25600
+spring:
+  datasource:
+#    url: jdbc:postgresql://10.5.30.101:25432/postgres_dev?ApplicationName=Prevision-Batch # 12  version
+#    username: postgres
+#    password: 123qwer@
+    url: jdbc:postgresql://10.5.30.101:15432/postgres_dev?ApplicationName=Prevision-Batch  # 9.6 version
+    username: postgres
+    password: P@ssw0rd
