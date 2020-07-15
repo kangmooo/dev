@@ -1,6 +1,6 @@
 package main.calcExpValidation;
 
-import org.assertj.core.util.TriFunction;
+import main.calcExpValidation.interfaces.TriFunction;
 
 import java.io.BufferedWriter;
 import java.io.File;
